@@ -7,7 +7,8 @@ const Ate = props => {
   return (
     <div className="Smurf">
     
-      <h3> You ate {props.smurf.name}</h3>
+      <h3> You ate a Smurf</h3>
+      
       <img src={ate} />
       
       <br />
