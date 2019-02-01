@@ -1,13 +1,15 @@
 import React from 'react';
 
-const Smurf = props => {
+import ate from './ate.jpg';
+
+const Ate = props => {
   //console.log(props.eatSmurf)
   return (
     <div className="Smurf">
     
-      <h3>{props.smurf.name}</h3>
-      <strong>{props.height} tall</strong>
-      <p>{props.age} smurf years old</p>
+      <h3> You ate {props.smurf.name}</h3>
+      <img src={ate} />
+      
       <br />
       <button onClick={event => {props.eatSmurf(event, props.smurf)}}>Eat this Smurf</button>
       <br />
@@ -16,11 +18,6 @@ const Smurf = props => {
   );
 };
 
-Smurf.defaultProps = {
-  name: '',
-  height: '',
-  age: ''
-};
 
-export default Smurf;
 
+export default Ate;

@@ -9,12 +9,15 @@ import img2 from './azra.jpg';
 
 
 import axios from 'axios';
+
 import {
   BrowserRouter as Router,
   Route,
   Link,
   NavLink,
  } from 'react-router-dom';
+
+ import Ate from './Ate';
 
 class App extends Component {
   constructor(props) {
@@ -37,25 +40,33 @@ class App extends Component {
     .catch (err => {
       console.log(err)
     })
-  }
+  };
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
   // Notice what your map function is looping over and returning inside of Smurfs.
   // You'll need to make sure you have the right properties on state and pass them down to props.
 
 
   eatSmurf = (event, smurfy) => {
-    event.prventDefault();
+    console.log('its running');
+    //event.preventDefault();
+
     axios
     .delete(`http://localhost:3333/smurfs/${smurfy.id}`)
-    .then(res => {
-      console.log(res)
+    .then (rezzy => {
+      console.log(rezzy)
+      {this.routeToAte}
     })
-    .catch(err => {
-      console.log(err)
+    .catch (errerz => {
+      console.log(errerz)
     })
 
+  };
+
+  routeToAte() {
+    this.history.location.push('/Ate')
   }
-  
+
+
   render() {
     return (
       <div className="App">
@@ -74,13 +85,17 @@ class App extends Component {
         </nav>
 
         <Route exact path="/" 
-          render = {props => <Smurfs {...props} smurfs={this.state.smurfs} />}
-          smurfs={this.state.smurfs}
-          eatSmurf={this.eatSmurf}
+          render = {props => <Smurfs {...props} smurfs={this.state.smurfs} eatSmurf={this.eatSmurf} />}
+          // smurfs={this.state.smurfs}
+          // eatSmurf={this.eatSmurf}
         />
         <Route path="/Add"
           render= {props => <SmurfForm {...props} smurfs={this.state.smurfs} /> } 
         />
+
+        <Route path='/Ate'
+          render = {props => <Ate {...props} smurf={this.eatSmurf.smurfy} /> } 
+          />
         
       </div>
     );

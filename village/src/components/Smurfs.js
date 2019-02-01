@@ -12,7 +12,7 @@ class Smurfs extends Component {
   
 
   render() {
-    console.log(this.eatSmurf)
+    //console.log(this.props.eatSmurf)
     return (
       <div className="Smurfs">
         <h1>Smurf Village</h1>
