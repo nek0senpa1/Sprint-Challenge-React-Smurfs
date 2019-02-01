@@ -1,5 +1,7 @@
 .App {
+  
   text-align: center;
+  
 }
 
 .nav-links {
@@ -21,4 +23,14 @@
 
 .garg-header {
   color: #1c5d76;
+}
+
+.Smurfs {
+  margin: auto;
+  width: 85%;
+}
+
+.Smurf {
+  margin: auto;
+  width: 70%;
 }

@@ -4,6 +4,9 @@ import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 
+import img1 from './garg.jpg';
+import img2 from './azra.jpg';
+
 
 import axios from 'axios';
 import {
@@ -39,11 +42,27 @@ class App extends Component {
   // Notice what your map function is looping over and returning inside of Smurfs.
   // You'll need to make sure you have the right properties on state and pass them down to props.
 
+
+  eatSmurf = (event, smurfy) => {
+    event.prventDefault();
+    axios
+    .delete(`http://localhost:3333/smurfs/${smurfy.id}`)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+
+  }
   
   render() {
     return (
       <div className="App">
         <nav>
+        <img src ={img2} alt ="Azrael" />
+          <img src ={img1} alt ="Gargamel"/>
+          
           <h1 className="garg-header">Gargamel's Ingredients</h1>
           <hr></hr>
           <div className="nav-links">
@@ -56,7 +75,8 @@ class App extends Component {
 
         <Route exact path="/" 
           render = {props => <Smurfs {...props} smurfs={this.state.smurfs} />}
-          smurfs={this.state.smurfs} 
+          smurfs={this.state.smurfs}
+          eatSmurf={this.eatSmurf}
         />
         <Route path="/Add"
           render= {props => <SmurfForm {...props} smurfs={this.state.smurfs} /> } 

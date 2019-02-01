@@ -1,11 +1,17 @@
 import React from 'react';
 
 const Smurf = props => {
+  //console.log(props.eatSmurf)
   return (
     <div className="Smurf">
-      <h3>{props.name}</h3>
+    
+      <h3>{props.smurf.name}</h3>
       <strong>{props.height} tall</strong>
       <p>{props.age} smurf years old</p>
+      <br />
+      <button onClick={event => {props.eatSmurf(props.smurf)}}>Eat this Smurf</button>
+      <br />
+      <hr />
     </div>
   );
 };

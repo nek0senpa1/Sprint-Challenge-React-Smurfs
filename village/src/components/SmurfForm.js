@@ -7,6 +7,7 @@ import {
   NavLink,
  } from 'react-router-dom';
 
+import getsmurf from './getsmurf.jpg';
 
 class SmurfForm extends Component {
   constructor(props) {
@@ -47,8 +48,16 @@ class SmurfForm extends Component {
       
       <div className="SmurfForm">
         <br />
+        <p>Gargamel: Let's find some Smurfs, Azrael!</p>
+        <p>Azrael: Reowwww!</p>
+        <p>Gargamel: Yes, but we need some information about our prey.</p>
+        <p>Azrael: Meowwwww?</p>
+        <p>Gargamel: Oh look, here comes one now...</p>
+        <p>Azrael: MeeeRowww</p>
         <br />
+        <img src={getsmurf} />
         <form onSubmit={this.addSmurf}>
+        <br></br>
           <input
             onChange={this.handleInputChange}
             placeholder="name"
@@ -69,6 +78,7 @@ class SmurfForm extends Component {
           />
           <button type="submit">Add to the village</button>
         </form>
+        <br /><br /><br /><br />
       </div>
     );
   }
