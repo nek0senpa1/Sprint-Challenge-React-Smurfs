@@ -3,7 +3,7 @@ import React from 'react';
 import ate from './ate.jpg';
 
 const Ate = props => {
-  //console.log(props.eatSmurf)
+  //console.log(smurf)
   return (
     <div className="Smurf">
     
@@ -12,7 +12,8 @@ const Ate = props => {
       <img src={ate} />
       
       <br />
-      <button onClick={event => {props.eatSmurf(event, props.smurf)}}>Eat this Smurf</button>
+      <button onClick={event => {props.history.push('/')}}>Back Home</button>
+      <p>(Don't Forget To Refresh Your Ingredient List)</p>
       <br />
       <hr />
     </div>

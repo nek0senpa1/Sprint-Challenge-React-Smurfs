@@ -54,16 +54,18 @@ class App extends Component {
     .delete(`http://localhost:3333/smurfs/${smurfy.id}`)
     .then (rezzy => {
       console.log(rezzy)
-      {this.routeToAte}
+      //{this.routeToAte}
     })
     .catch (errerz => {
       console.log(errerz)
     })
 
+    //this.props.history.push('/')
+
   };
 
   routeToAte() {
-    this.history.location.push('/Ate')
+    this.history.push('/Ate')
   }
 
 

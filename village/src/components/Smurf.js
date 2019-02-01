@@ -9,7 +9,7 @@ const Smurf = props => {
       <strong>{props.height} tall</strong>
       <p>{props.age} smurf years old</p>
       <br />
-      <button onClick={event => {props.eatSmurf(event, props.smurf)}}>Eat this Smurf</button>
+      <button onClick={event => {props.eatSmurf(event, props.smurf); props.props.history.push('/Ate')}}>Eat this Smurf</button>
       <br />
       <hr />
     </div>

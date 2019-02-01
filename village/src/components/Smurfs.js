@@ -23,6 +23,7 @@ class Smurfs extends Component {
           {this.props.smurfs.map(smurf => {
             return (
               <Smurf
+                props={this.props}
                 name={smurf.name}
                 id={smurf.id}
                 age={smurf.age}
