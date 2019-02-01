@@ -9,6 +9,7 @@ import axios from 'axios';
 import {
   BrowserRouter as Router,
   Route,
+  Link,
   NavLink,
  } from 'react-router-dom';
 
@@ -39,17 +40,41 @@ class App extends Component {
   // You'll need to make sure you have the right properties on state and pass them down to props.
 
   
-
-
-  
   render() {
     return (
       <div className="App">
-        <SmurfForm />
-        <Smurfs smurfs={this.state.smurfs} />
+        <nav>
+          <h1 className="garg-header">Gargamel's Ingredients</h1>
+          <hr></hr>
+          <div className="nav-links">
+            <Link to="/">Smurf List</Link>
+            <Link to="/Add">Add Smurf</Link>
+            
+          </div>
+          <hr></hr>
+        </nav>
+
+        <Route exact path="/" 
+          render = {props => <Smurfs {...props} smurfs={this.state.smurfs} />}
+          smurfs={this.state.smurfs} 
+        />
+        <Route path="/Add"
+          render= {props => <SmurfForm {...props} smurfs={this.state.smurfs} /> } 
+        />
+        
       </div>
     );
   }
-}
+
+  
+//   render() {
+//     return (
+//       <div className="App">
+//         <SmurfForm />
+//         <Smurfs smurfs={this.state.smurfs} />
+//       </div>
+//     );
+//   }
+ }
 
 export default App;
