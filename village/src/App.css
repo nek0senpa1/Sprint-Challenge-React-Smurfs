@@ -1,3 +1,36 @@
 .App {
+  
   text-align: center;
+  
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1c5d76;
+  font-weight: bold;
+  
+}
+
+
+.nav-links a.active {
+  border-bottom: 1px solid #1c5d76;
+}
+
+.garg-header {
+  color: #1c5d76;
+}
+
+.Smurfs {
+  margin: auto;
+  width: 85%;
+}
+
+.Smurf {
+  margin: auto;
+  width: 70%;
 }
